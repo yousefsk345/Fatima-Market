@@ -64,6 +64,23 @@ search.addEventListener("keyup", () => {
   if (!/[0-9]/.test(value)) {
     document.getElementById("error-code").innerText =
       "يجب عليك ان تقوم بادخال ارقام";
+    showItems.innerHTML = "";
+    items.map((item) => {
+      if (item.title.includes(value)) {
+        let oneItem = document.createElement("div");
+        let img = document.createElement("img");
+        let title = document.createElement("h4");
+        let code = document.createElement("span");
+        code.innerText = item.code;
+        img.src = item.img;
+        title.innerText = item.title;
+        oneItem.className = "item";
+        oneItem.appendChild(img);
+        oneItem.appendChild(title);
+        oneItem.appendChild(code);
+        showItems.appendChild(oneItem);
+      }
+    });
   } else {
     document.getElementById("error-code").innerText = "";
     showItems.innerHTML = "";
