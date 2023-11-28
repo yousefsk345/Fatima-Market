@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Log in</title>
+    <link rel="stylesheet" href="main.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1 class="main-name">Log in</h1>
+      <form action="/">
+        <div class="input-feild">
+          <i class="fa-solid fa-user user"></i>
+          <input type="text" id="username" placeholder="Username" />
+        </div>
+        <p id="name-error" class="error">username must be only characters</p>
+        <div class="input-feild">
+          <i class="fa-solid fa-lock pass"></i>
+          <input type="password" id="password" placeholder="type hard password" />
+          <i class="fa-solid fa-eye" id="btn"></i>
+          
+        </div>
+        <p id="pass-error" class="error"></p>
+        <button id="submit-btn">Submit</button>
+      </form>
+      </div>
+    <script src="script.js"></script>
+  </body>
+</html>
