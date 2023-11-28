@@ -111,7 +111,13 @@ body {
   background-color: rgb(234, 79, 79);
   color: white;
 }
-
+#error-code {
+  text-align: right;
+  padding: 10px;
+  font-size: 22px;
+  font-weight: bold;
+  color: yellow;
+}
 .items {
   width: 100%;
   display: flex;
@@ -127,6 +133,11 @@ h2.itesm-head {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
   width: 80%;
+}
+@media (max-width:600px) {
+  #show-items {
+    width: 100% !important;
+  }
 }
 #show-items .item {
   text-align: center;
@@ -144,10 +155,15 @@ h2.itesm-head {
   border-top-right-radius: 10px;
   margin-bottom: 10px;
 }
+#show-items .item h4 {
+  font-size: 22px;
+  margin-bottom: 20px;
+}
+#show-items .item span {
+  color: #555252;
+}
 @media (max-width: 390px) {
   #show-items .item {
     width: 330px;
-    margin: 20px -5px;
-    align-items: center;
   }
 }
