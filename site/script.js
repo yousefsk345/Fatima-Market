@@ -61,37 +61,27 @@ const fillteredItems = items.filter((item) => {
 let search = document.getElementById("search");
 search.addEventListener("keyup", () => {
   let value = search.value;
-  if(!(/[0-9]/.test(value))){
-    document.getElementById("error-code").innerText = "يجب عليك ان تقوم بادخال ارقام"
+  if (!/[0-9]/.test(value)) {
+    document.getElementById("error-code").innerText =
+      "يجب عليك ان تقوم بادخال ارقام";
+  } else {
+    document.getElementById("error-code").innerText = "";
+    showItems.innerHTML = "";
+    items.map((item) => {
+      if (item.code.includes(value)) {
+        let oneItem = document.createElement("div");
+        let img = document.createElement("img");
+        let title = document.createElement("h4");
+        let code = document.createElement("span");
+        code.innerText = item.code;
+        img.src = item.img;
+        title.innerText = item.title;
+        oneItem.className = "item";
+        oneItem.appendChild(img);
+        oneItem.appendChild(title);
+        oneItem.appendChild(code);
+        showItems.appendChild(oneItem);
+      }
+    });
   }
-  showItems.innerHTML = "";
-  items.map((item) => {
-    if (item.code.includes(value)) {
-      let oneItem = document.createElement("div");
-      let img = document.createElement("img");
-      let title = document.createElement("h4");
-      let code = document.createElement("span");
-      code.innerText = item.code;
-      img.src = item.img;
-      title.innerText = item.title;
-      oneItem.className = "item";
-      oneItem.appendChild(img);
-      oneItem.appendChild(title);
-      oneItem.appendChild(code);
-      showItems.appendChild(oneItem);
-    }
-    // let oneItem = document.createElement("div");
-    // let img = document.createElement("img");
-    // let title = document.createElement("h4");
-    // let code = document.createElement("span");
-    // code.innerText = item.code;
-    // img.src = item.img;
-    // title.innerText = item.title;
-    // oneItem.className = "item";
-    // oneItem.setAttribute("key", item.code);
-    // oneItem.appendChild(img);
-    // oneItem.appendChild(title);
-    // oneItem.appendChild(code);
-    //   showItems.appendChild(oneItem);
-  });
 });
