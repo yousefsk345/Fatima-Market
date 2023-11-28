@@ -101,23 +101,7 @@ body {
     width: 130px;
   }
 }
-.container .head .search button {
-  flex: 1;
-  padding: 10px;
-  border-radius: 50px;
-  border: none;
-  font-size: 25px;
-  font-weight: bold;
-  background-color: rgb(234, 79, 79);
-  color: white;
-}
-#error-code {
-  text-align: right;
-  padding: 10px;
-  font-size: 22px;
-  font-weight: bold;
-  color: yellow;
-}
+
 .items {
   width: 100%;
   display: flex;

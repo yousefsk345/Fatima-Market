@@ -62,8 +62,6 @@ let search = document.getElementById("search");
 search.addEventListener("keyup", () => {
   let value = search.value;
   if (!/[0-9]/.test(value)) {
-    document.getElementById("error-code").innerText =
-      "يجب عليك ان تقوم بادخال ارقام";
     showItems.innerHTML = "";
     items.map((item) => {
       if (item.title.includes(value)) {
@@ -82,7 +80,6 @@ search.addEventListener("keyup", () => {
       }
     });
   } else {
-    document.getElementById("error-code").innerText = "";
     showItems.innerHTML = "";
     items.map((item) => {
       if (item.code.includes(value)) {
