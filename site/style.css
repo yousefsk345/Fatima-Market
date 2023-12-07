@@ -73,12 +73,27 @@ body {
 }
 @media (max-width: 988px) {
   .head .name {
-    justify-content: center !important;
-    margin-top: 0 !important;
+    /* justify-content: center !important; */
+    /* margin-top: 0 !important; */
+    display: block !important;
   }
-  .head .name ul {
+  .head ul {
+    justify-content: center;
+  }
+  .head ul li {
+    margin: 20px 0 !important;
+  }
+  .head .name li:not(.profile) {
     display: none !important;
   }
+  .head .name .profile a {
+    font-size: 15px;
+    padding: 10px 20px;
+    text-wrap: nowrap;
+    margin: 0px;
+  }
+
+  
 }
 .container .head .search {
   display: flex;
