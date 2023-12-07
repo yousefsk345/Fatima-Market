@@ -15,23 +15,31 @@
   </head>
   <body>
     <div class="container">
-      <h1 class="main-name">Log in</h1>
+      <h1 class="main-name">تسجيل الدخول</h1>
       <form action="site/sales.html">
         <div class="input-feild">
           <i class="fa-solid fa-user user"></i>
           <input type="text" id="username" placeholder="Username" />
         </div>
-        <p id="name-error" class="error">username must be only characters</p>
+        <p id="name-error" class="error"></p>
+        <div class="input-feild">
+          <i class="fa-solid fa-image-portrait age"></i>
+          <input type="text" id="age" placeholder="Your Age" />
+        </div>
+        <p id="age-error" class="error"></p>
         <div class="input-feild">
           <i class="fa-solid fa-lock pass"></i>
-          <input type="password" id="password" placeholder="type hard password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="type hard password"
+          />
           <i class="fa-solid fa-eye" id="btn"></i>
-          
         </div>
         <p id="pass-error" class="error"></p>
-        <button id="submit-btn">Submit</button>
+        <button id="submit-btn">تأكيد</button>
       </form>
-      </div>
+    </div>
     <script src="script.js"></script>
   </body>
 </html>

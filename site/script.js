@@ -39,7 +39,7 @@ const items = [
 ];
 
 let showItems = document.getElementById("show-items");
-items.map((item) => {
+const itemsDisplay = (item) => {
   let oneItem = document.createElement("div");
   let img = document.createElement("img");
   let title = document.createElement("h4");
@@ -48,54 +48,50 @@ items.map((item) => {
   img.src = item.img;
   title.innerText = item.title;
   oneItem.className = "item";
-  oneItem.setAttribute("key", item.code);
   oneItem.appendChild(img);
   oneItem.appendChild(title);
   oneItem.appendChild(code);
   showItems.appendChild(oneItem);
+};
+
+items.map((item) => {
+  itemsDisplay(item);
 });
+
 const fillteredItems = items.filter((item) => {
   return item.code.includes("");
 });
 
 let search = document.getElementById("search");
-search.addEventListener("keyup", () => {
+search.addEventListener("keyup", (e) => {
   let value = search.value;
-  if (!/[0-9]/.test(value)) {
+  let errroHandle = document.getElementById("error-handle");
+  if (/[0-9]/.test(value)) {
     showItems.innerHTML = "";
+    errroHandle.innerText = "";
     items.map((item) => {
-      if (item.title.includes(value)) {
-        let oneItem = document.createElement("div");
-        let img = document.createElement("img");
-        let title = document.createElement("h4");
-        let code = document.createElement("span");
-        code.innerText = item.code;
-        img.src = item.img;
-        title.innerText = item.title;
-        oneItem.className = "item";
-        oneItem.appendChild(img);
-        oneItem.appendChild(title);
-        oneItem.appendChild(code);
-        showItems.appendChild(oneItem);
+      if (item.code.includes(value)) {
+        itemsDisplay(item);
       }
     });
   } else {
-    showItems.innerHTML = "";
-    items.map((item) => {
-      if (item.code.includes(value)) {
-        let oneItem = document.createElement("div");
-        let img = document.createElement("img");
-        let title = document.createElement("h4");
-        let code = document.createElement("span");
-        code.innerText = item.code;
-        img.src = item.img;
-        title.innerText = item.title;
-        oneItem.className = "item";
-        oneItem.appendChild(img);
-        oneItem.appendChild(title);
-        oneItem.appendChild(code);
-        showItems.appendChild(oneItem);
-      }
-    });
+    errroHandle.innerText = "ادخل فقط ارقام صالحة";
+  }
+  if (e.key == "Enter") {
+    if (/[0-9]/.test(value)) {
+      showItems.innerHTML = "";
+      errroHandle.innerText = "";
+      items.map((item) => {
+        if (item.code.includes(value)) {
+          itemsDisplay(item);
+        }
+      });
+    }
+  }
+  if(value =="" || value == null) {
+    showItems.innerHTML = ""
+    items.map((item)=>{
+      itemsDisplay(item)
+    })
   }
 });

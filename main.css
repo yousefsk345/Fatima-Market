@@ -107,8 +107,12 @@ body {
   .input-feild {
     margin: 30px 0 !important;
   }
+  .input-feild .input {
+    padding-left: 20px;
+  }
   .input-feild i.user,
-  .input-feild i.pass {
+  .input-feild i.pass,
+  .input-feild i.age {
     display: none;
   }
 }

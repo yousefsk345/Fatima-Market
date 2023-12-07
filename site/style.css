@@ -96,6 +96,12 @@ body {
   outline: none;
   font-size: 25px;
 }
+.container .head p {
+      font-size: 22px;
+    text-align: right;
+    padding: 20px 10px 0;
+    color: yellow;
+}
 @media (max-width: 450px) {
   .container .head .search input {
     width: 130px;
