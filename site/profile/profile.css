@@ -67,12 +67,19 @@ body {
   justify-content: center;
   padding-top: 50px;
 }
+
 .show-data {
   width: 50%;
   display: grid;
   border: 1px solid #ccc;
   border-radius: 30px;
   padding: 20px;
+}
+@media (max-width:520px) {
+  .container .show-data{
+    width:100%;
+    margin: 0 20px;
+  }
 }
 .show-data .data {
   display: flex;
